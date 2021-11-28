@@ -1,8 +1,10 @@
 import { Logo } from './logo'
+import { GlobalStyles } from './styles'
 
 export function App() {
   return (
     <>
+      <GlobalStyles />
       <Logo />
       <p>Hello Vite + Preact!</p>
       <p>
