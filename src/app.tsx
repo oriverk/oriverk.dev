@@ -1,22 +1,13 @@
-import { Logo } from './logo'
-import { GlobalStyles } from './styles'
+import Header from "./components/Header"
+import Main from './components/Main'
+import Footer from './components/Footer'
 
 export function App() {
   return (
     <>
-      <GlobalStyles />
-      <Logo />
-      <p>Hello Vite + Preact!</p>
-      <p>
-        <a
-          class="link"
-          href="https://preactjs.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn Preact
-        </a>
-      </p>
+      <Header />
+      <Main />
+      <Footer />
     </>
   )
 }
