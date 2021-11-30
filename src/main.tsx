@@ -1,9 +1,13 @@
-import { h, render } from 'preact'
+import { Fragment, h, render } from 'preact'
 import { setup } from 'goober'
 import { App } from './app'
-
-// import "./index.css"
+import { GlobalStyles } from './styles/global'
 
 setup(h)
 
-render(<App />, document.getElementById('app')!)
+render(
+  <Fragment>
+    <GlobalStyles />
+    <App />
+  </Fragment>,
+  document.getElementById('app')!)
