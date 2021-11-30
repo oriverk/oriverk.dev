@@ -1,6 +1,6 @@
 import { h, FunctionalComponent } from "preact"
 import { styled } from "goober"
-import type { SvgIconProps } from "."
+import type { SvgIconProps } from "../../types"
 
 interface Props extends SvgIconProps {
   className?: string;
