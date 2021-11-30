@@ -14,7 +14,7 @@ const Component: FunctionalComponent<Props> = (props) => {
       <nav>
         <a href="/">oriverk.dev</a>
         <div className="right">
-          <a href="#">
+          <a href="/about">
             <NamedIcon name="Resume" variant="none" width={16} height={16} fontSize={3}>
               <ContactIcon label="go to resume page" size={8} color="var(--color-gray)" />
             </NamedIcon>
@@ -58,5 +58,5 @@ const ContainerComponent: FunctionalComponent = () => (
   <StyledComponent />
 )
 
-const Hero = ContainerComponent
-export default Hero
+const Header = ContainerComponent
+export default Header

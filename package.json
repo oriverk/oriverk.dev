@@ -8,7 +8,8 @@
   },
   "dependencies": {
     "goober": "^2.1.0",
-    "preact": "^10.5.13"
+    "preact": "^10.5.13",
+    "preact-router": "^3.2.1"
   },
   "devDependencies": {
     "@preact/preset-vite": "^2.0.0",
