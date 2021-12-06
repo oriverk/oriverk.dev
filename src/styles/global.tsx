@@ -14,6 +14,7 @@ export const GlobalStyles = createGlobalStyles`
   --color-background: #1A202C;
   --color-miku: #00e1ee;
   --color-purple: #673ab8;
+  --color-divider: #41464b;
 }
 
 html,
@@ -34,7 +35,7 @@ body {
   display: flex;
   flex-direction: column;
   height: 100%;
-  text-align: center;
+
   background-color: var(--color-background);
   color: var(--color-white);
   font-size: 1.5em;
@@ -42,5 +43,9 @@ body {
 
 a {
   color: var(--color-miku);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
 }
 `;
