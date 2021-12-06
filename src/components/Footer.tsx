@@ -38,6 +38,9 @@ const StyledComponent = styled(Component)`
     a {
       text-decoration: none;
     }
+    a:hover {
+      text-decoration: underline;
+    }
   }
 `
 

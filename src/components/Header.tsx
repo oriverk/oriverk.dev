@@ -15,7 +15,7 @@ const Component: FunctionalComponent<Props> = (props) => {
         <a href="/">oriverk.dev</a>
         <div className="right">
           <a href="/about">
-            <NamedIcon name="Resume" variant="none" width={16} height={16} fontSize={3}>
+            <NamedIcon name="About" variant="none" width={16} height={16} fontSize={3}>
               <ContactIcon label="go to resume page" size={8} color="var(--color-gray)" />
             </NamedIcon>
           </a>
