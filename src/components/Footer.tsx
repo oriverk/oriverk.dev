@@ -12,17 +12,19 @@ const cloudflarePages = "https://pages.cloudflare.com/"
 const Component: FunctionalComponent<Props> = (props) => {
   return (
     <footer {...props}>
-      <small>@{year} Kawano Yudai</small><br />
-      <small>
-        This site is built with{" "}
-        <a href={preactjs} target="_blank" rel="noopener noreferrer">
-          Preact
-        </a>{" "}
-        and hosting on{" "}
-        <a href={cloudflarePages} target="_blank" rel="noopener noreferrer">
-          Cloudflare Pages
-        </a>.
-      </small>
+      <div>
+        <small>@{year} Kawano Yudai.</small><br />
+        <p>
+          This site is built with{" "}
+          <a href={preactjs} target="_blank" rel="noopener noreferrer">
+            Preact
+          </a>{" "}
+          and hosting on{" "}
+          <a href={cloudflarePages} target="_blank" rel="noopener noreferrer">
+            Cloudflare Pages
+          </a>.
+        </p>
+      </div>
     </footer>
   )
 }
@@ -30,16 +32,16 @@ const Component: FunctionalComponent<Props> = (props) => {
 const StyledComponent = styled(Component)`
   padding: 1rem;
   text-align: center;
-  & > small {
+  & > div {
     margin: 0 auto;
     max-width: var(--max-width);
     font-size: 1rem;
     color: var(--color-gray);
-    a {
-      text-decoration: none;
+    small {
+      font-size: 1rem;
     }
-    a:hover {
-      text-decoration: underline;
+    p {
+      margin-top: .5rem;
     }
   }
 `

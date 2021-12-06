@@ -32,6 +32,7 @@ const Component: FunctionalComponent<Props> = (props) => {
 
 const StyledComponent = styled(Component)`
 text-align: center;
+font-size: 1.5rem;
 nav {
   display: flex;
   justify-content: space-between;
@@ -40,15 +41,19 @@ nav {
   padding: 1rem;
   max-width: var(--max-width);
   a {
-    color: white;
+    color: var(--color-white);
     text-decoration: none;
+  }
+  a:hover {
+    color: var(--color-miku);
+    transition: color .3s ease;
   }
   .right {
     display: flex;
     a:hover {
       transition: background .25s ease;
       background: rgba(0,0,0,0.3);
-      border-radius: 5px;
+      border-radius: .2rem;
     }
   }
 }
