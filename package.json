@@ -8,6 +8,9 @@
   },
   "dependencies": {
     "goober": "^2.1.0",
+    "micromark": "^3.0.10",
+    "micromark-extension-frontmatter": "^1.0.0",
+    "micromark-extension-gfm": "^2.0.0",
     "preact": "^10.5.13",
     "preact-router": "^3.2.1"
   },
