@@ -13,22 +13,15 @@ const Component: FunctionalComponent<Props> = (props) => {
   const { html } = parseMarkdwon(markdown.replace(/\n#/g, "\n"))
 
   return (
-    <main {...props}>
-      <div className="content">
-        <DangerouslySetInnerHTML html={html} />
-      </div>
-    </main>
+    <div {...props}>
+      <DangerouslySetInnerHTML html={html} />
+    </div>
   )
 }
 
 const StyledComponent = styled(Component)`
+  max-width: var(--max-width);
   padding: 1rem;
-  display: flex;
-  justify-content: center;
-
-  .content {
-    max-width: var(--max-width);
-  }
 `
 
 const ContainerComponent: FunctionalComponent = () => (

@@ -13,64 +13,52 @@ const github = "https://github.com/oriverk"
 
 const Component: FunctionalComponent<Props> = (props) => {
   return (
-    <main {...props}>
-      <div className="content">
-        <h1>Kawano Yudai</h1>
-        <p>Agr. → ? / Bicycle</p>
-        <div className="icons">
-          <a href={twitter} target="_blank" rel="noopener noreferrer">
-            <NamedIcon name="@not_you_die"
-              variant="none" width={16} height={16} fontSize={3}
-            >
-              <TwitterIcon size={8} label="Twitter" />              
-            </NamedIcon>
-          </a>
-          <a href={github} target="_blank" rel="noopener noreferrer">
-            <NamedIcon name="oriverk"
-              variant="none" width={16} height={16} fontSize={3}
-            >
-              <GithubIcon size={8} label="Github" />
-            </NamedIcon>
-          </a>
-        </div>
+    <div {...props}>
+      <h1>Kawano Yudai</h1>
+      <p>Agr. → ? / Bicycle</p>
+      <div className="icons">
+        <a href={twitter} target="_blank" rel="noopener noreferrer">
+          <NamedIcon name="@not_you_die"
+            variant="none" width={16} height={16} fontSize={3}
+          >
+            <TwitterIcon size={8} label="Twitter" />
+          </NamedIcon>
+        </a>
+        <a href={github} target="_blank" rel="noopener noreferrer">
+          <NamedIcon name="oriverk"
+            variant="none" width={16} height={16} fontSize={3}
+          >
+            <GithubIcon size={8} label="Github" />
+          </NamedIcon>
+        </a>
       </div>
-    </main>
+    </div>
   )
 }
 
 const StyledComponent = styled(Component)`
-  padding: 1rem;
-  text-align: center;
-  flex-grow: 1;
+  max-width: var(--max-width);
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  font-size: 1.5rem;
+  h1, p {
+    margin: 1rem auto 0;
+  }
 
-  .content {
-    max-width: var(--max-width);
+  .icons {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0;
 
-    h1, p {
-      margin: 1rem auto 0;
+    a {
+      padding: 0 1rem;
+      text-decoration: none;
     }
-
-    .icons {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 1rem 0;
-
-      a {
-        display: inline-block;
-        padding: 0 1rem;
-        text-decoration: none;
-      }
-      a:hover {
-        transition: background .25s ease;
-        background: rgba(0,0,0,0.3);
-        border-radius: 5px;
-      }
+    a:hover {
+      transition: background .25s ease;
+      background: rgba(0,0,0,0.3);
+      border-radius: .3rem;
     }
   }
 `

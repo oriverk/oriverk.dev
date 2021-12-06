@@ -38,7 +38,7 @@ body {
 
   background-color: var(--color-background);
   color: var(--color-white);
-  font-size: 1.5em;
+  font-size: 1rem;
 }
 
 a {
