@@ -32,6 +32,6 @@ const ContainerComponent: FunctionalComponent<Partial<SvgIconProps>> = (props) =
   )
 }
 
-const GihubIcon = ContainerComponent
+const GithubIcon = ContainerComponent
 
-export default GihubIcon
+export default GithubIcon
