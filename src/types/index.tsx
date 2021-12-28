@@ -3,5 +3,5 @@ export interface SvgIconProps {
   size: number;
   label?: string;
   title?: string;
-  role?: "presentation" | "img"
+  role?: "presentation" | "img";
 }

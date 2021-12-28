@@ -1,4 +1,4 @@
-import { createGlobalStyles } from 'goober/global';
+import { createGlobalStyles } from "goober/global";
 
 // 1024px x .75 = 768px
 

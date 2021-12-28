@@ -1,11 +1,11 @@
-import { h, Fragment } from "preact"
-import Router from "preact-router"
+import { h, Fragment } from "preact";
+import Router from "preact-router";
 
-import Header from "./components/Header"
-import Footer from './components/Footer'
-import Home from "./pages/Home"
-import About from "./pages/About"
-import Main from "./components/Main"
+import { Header } from "./components/header";
+import { Footer } from "./components/footer";
+import { Home } from "./pages/home";
+import { About } from "./pages/about";
+import { Main } from "./components/main";
 
 export function App() {
   return (
@@ -19,5 +19,5 @@ export function App() {
       </Main>
       <Footer />
     </Fragment>
-  )
+  );
 }
