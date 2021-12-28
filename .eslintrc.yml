@@ -1,0 +1,49 @@
+env:
+  browser: true
+  es2021: true
+settings:
+  react:
+    pragma: h
+  import/resolver: {
+    'node': { 'extensions': ['.js', '.jsx', '.ts', '.tsx'] }
+  }
+extends:
+  - plugin:react/recommended
+  - airbnb
+  - plugin:import/errors
+  - plugin:import/warnings
+  - plugin:import/typescript
+  - plugin:@typescript-eslint/recommended
+  - plugin:@typescript-eslint/recommended-requiring-type-checking
+  - preact
+  - prettier
+parser: '@typescript-eslint/parser'
+parserOptions:
+  project: './tsconfig.json'
+  ecmaFeatures:
+    jsx: true
+  ecmaVersion: 13
+  sourceType: module
+plugins:
+  - react
+  - '@typescript-eslint'
+  - import
+  - prettier
+rules: {
+  'comma-dangle': 0,
+  'react/prop-types': 0,
+  'react/function-component-definition': 0,
+  'react/jsx-filename-extension': [
+    "error", 
+    { "extensions": [".jsx", ".tsx"] }
+  ],
+  'react/jsx-props-no-spreading': 0,
+  'import/no-unresolved': 0,
+  'import/extensions': [
+    "error",
+    "ignorePackages",
+    { "js": "never", "jsx": "never", "ts": "never", "tsx": "never" },
+  ],
+  'import/prefer-default-export': 0,
+  'jest/no-deprecated-functions': 0,
+}
