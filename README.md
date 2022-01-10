@@ -35,8 +35,8 @@ reference: [vitejs: Env Variables and Modes](https://vitejs.dev/guide/env-and-mo
 
 | Name | Description | Reference |
 | --- | --- | --- |
-| VITE_SITE_PATH | for portfolio site | [github: oriverk/site](https://github.com/oriverk/site) |
-| VITE_BLOG_PATH | for portfolio blog | [github: oriverk/oriverk.dev](https://github.com/oriverk/oriverk.dev) |
+| VITE_SITE_PATH | for portfolio site | [github: oriverk/oriverk.dev](https://github.com/oriverk/oriverk.dev) |
+| VITE_BLOG_PATH | for portfolio blog | [github: oriverk/blog.oriverk.dev](https://github.com/oriverk/blog.oriverk.dev) |
 
 ## Errors I met with
 

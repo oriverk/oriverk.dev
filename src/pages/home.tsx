@@ -14,7 +14,7 @@ const github = "https://github.com/oriverk";
 
 const Component: FunctionalComponent<Props> = (props) => (
   <div {...props}>
-    <Seo path="/" title="Top" description="Kawano Yudai resume" />
+    <Seo path="/" title="Top" description="Kawano Yudai`s website" />
     <h1>Kawano Yudai</h1>
     <p>Agr. → ? / Bicycle</p>
     <div className="icons">
