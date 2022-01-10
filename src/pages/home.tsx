@@ -1,6 +1,7 @@
 import { h, FunctionalComponent } from "preact";
 import { styled } from "goober";
 
+import { Seo } from "../components/seo";
 import { GithubIcon, TwitterIcon } from "../components/icons";
 import { NamedIcon } from "../components/named-icon";
 
@@ -13,6 +14,7 @@ const github = "https://github.com/oriverk";
 
 const Component: FunctionalComponent<Props> = (props) => (
   <div {...props}>
+    <Seo path="/" title="Top" description="Kawano Yudai resume" />
     <h1>Kawano Yudai</h1>
     <p>Agr. → ? / Bicycle</p>
     <div className="icons">
