@@ -46,4 +46,5 @@ rules: {
   ],
   'import/prefer-default-export': 0,
   'jest/no-deprecated-functions': 0,
+  '@typescript-eslint/ban-ts-comment': 0
 }
