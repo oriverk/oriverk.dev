@@ -4,6 +4,8 @@ import { styled } from "goober";
 import { NamedIcon } from "./named-icon";
 import { ContactIcon, PenIcon } from "./icons";
 
+const blogPath = import.meta.env.VITE_BLOG_PATH;
+
 interface Props {
   className?: string;
 }
@@ -18,7 +20,7 @@ const Component: FunctionalComponent<Props> = (props) => (
             <ContactIcon label="go to resume page" size={8} color="var(--color-gray)" />
           </NamedIcon>
         </a>
-        <a href="#blog">
+        <a href={blogPath} target="_blank" rel="noopener noreferrer">
           <NamedIcon name="Blog" variant="none" width={16} height={16} fontSize={3}>
             <PenIcon label="go to blog page" size={8} color="var(--color-gray)" />
           </NamedIcon>
