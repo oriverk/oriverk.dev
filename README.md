@@ -1,6 +1,12 @@
-# oriverk.dev site
+# oriverk.dev: README
 
-## tech
+## Author
+
+- [Github](https://github.com/oriverk)
+- [Twitter](https://twitter.com/not_you_die)
+- [Qiita](https://qiita.com/OriverK)
+
+## Techs
 
 - [Vite](https://vitejs.dev/)
   - Next Generation Frontend Tooling
@@ -13,7 +19,7 @@
 - [Cloudflare Pages](https://pages.cloudflare.com/)
   - Cloudflare Pages is a JAMstack platform for frontend developers to collaborate and deploy websites.
 
-## other references
+## Other references
 
 ※基本的には先述の公式サイトを見て理解、サイトを作成した。下記は作成後に見つけたページ等をメモ代わりに記載。
 
@@ -23,9 +29,16 @@
 - [blog.ojisan.io - Preactの環境構築 of 2020](https://blog.ojisan.io/how-to-create-preact-app-2020/)
 - [mizchi.dev - 省ビルドサイズ要求環境でモダンフロントエンドをやる (主に preact の話)](https://mizchi.dev/202006261728-minimal-js)
 
-## errors
+## Env variables
 
-出会ったエラー等。
+reference: [vitejs: Env Variables and Modes](https://vitejs.dev/guide/env-and-mode.html#env-variables-and-modes)
+
+| Name | Description | Reference |
+| --- | --- | --- |
+| VITE_SITE_PATH | for portfolio site | [github: oriverk/site](https://github.com/oriverk/site) |
+| VITE_BLOG_PATH | for portfolio blog | [github: oriverk/oriverk.dev](https://github.com/oriverk/oriverk.dev) |
+
+## Errors I met with
 
 ```txt
 node_modules/goober/global/global.d.ts(1,45): error TS2307: Cannot find module 'csstype' or its corresponding type declarations.
