@@ -1,8 +1,8 @@
 import { h, FunctionalComponent } from "preact";
 import { styled } from "goober";
 
-import { NamedIcon } from "./named-icon";
-import { ContactIcon, PenIcon } from "./icons";
+import { NamedIcon } from "../named-icon";
+import { ContactIcon, PenIcon } from "../icons";
 
 const blogPath = import.meta.env.VITE_BLOG_PATH;
 
