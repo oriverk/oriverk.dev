@@ -11,7 +11,7 @@ interface Props {
 }
 
 const Component: FunctionalComponent<Props> = (props) => {
-  const { html } = parseMarkdwon(markdown.replace(/\n#/g, "\n"));
+  const { html } = parseMarkdwon(markdown);
 
   return (
     <div {...props}>
