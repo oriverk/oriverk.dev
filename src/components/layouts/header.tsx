@@ -1,4 +1,5 @@
 import { h, FunctionalComponent } from "preact";
+import { Link } from "preact-router/match";
 import { styled } from "goober";
 
 import { NamedIcon } from "../named-icon";
@@ -13,13 +14,15 @@ interface Props {
 const Component: FunctionalComponent<Props> = (props) => (
   <header {...props}>
     <nav>
-      <a href="/">oriverk.dev</a>
+      <Link href="/" activeClassName="active" className="left" >
+        oriverk.dev
+      </Link>
       <div className="right">
-        <a href="/about">
+        <Link href="/about" activeClassName="active">
           <NamedIcon name="About" variant="none" width={16} height={16} fontSize={3}>
             <ContactIcon label="go to resume page" size={8} color="var(--color-gray)" />
           </NamedIcon>
-        </a>
+        </Link>
         <a href={blogPath} target="_blank" rel="noopener noreferrer">
           <NamedIcon name="Blog" variant="none" width={16} height={16} fontSize={3}>
             <PenIcon label="go to blog page" size={8} color="var(--color-gray)" />
@@ -31,26 +34,29 @@ const Component: FunctionalComponent<Props> = (props) => (
 );
 
 const StyledComponent = styled(Component)`
-  text-align: center;
   font-size: 1.5rem;
-  nav {
+  & > nav {
+    margin: 0 auto;
+    padding: 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0 auto;
-    padding: 1rem;
     max-width: var(--max-width);
-    a {
+    & > .left {
       color: var(--color-white);
       text-decoration: none;
+      &.active {
+        text-decoration: underline var(--color-miku);
+      }
+      &:hover {
+        color: var(--color-miku);
+        transition: color 0.3s ease;
+      }
     }
-    a:hover {
-      color: var(--color-miku);
-      transition: color 0.3s ease;
-    }
-    .right {
+    & > .right {
       display: flex;
-      a:hover {
+      & > a:hover {
+        text-decoration: none;
         transition: background 0.25s ease;
         background: rgba(0, 0, 0, 0.3);
         border-radius: 0.2rem;
