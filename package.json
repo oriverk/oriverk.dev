@@ -35,9 +35,9 @@
     "micromark": "^3.0.10",
     "micromark-extension-frontmatter": "^1.0.0",
     "micromark-extension-gfm": "^2.0.0",
-    "preact": "^10.5.13",
+    "preact": "^10.6.4",
     "preact-helmet": "^4.0.0-alpha-3",
-    "preact-router": "^3.2.1"
+    "preact-router": "^4.0.0"
   },
   "devDependencies": {
     "@preact/preset-vite": "^2.0.0",
