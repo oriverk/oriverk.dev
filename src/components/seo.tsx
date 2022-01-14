@@ -11,7 +11,7 @@ interface SeoProps {
 }
 
 export const Seo: FunctionalComponent<SeoProps> = (props) => {
-  const { path, title = "", description, ogImagePath = "/assets/sugarloaf-adelaide.png", noindex } = props;
+  const { path, title = "", description, ogImagePath = "/assets/sugarloaf-adelaide.webp", noindex } = props;
 
   const sitePath = import.meta.env.VITE_SITE_PATH;
   const pageUrl = sitePath + path;
