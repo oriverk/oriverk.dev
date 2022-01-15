@@ -14,14 +14,6 @@ const Component: FunctionalComponent<Props> = ({ className, html }) => (
 );
 
 const StyledComponent = styled(Component)`
-  font-size: 1rem;
-
-  h1,
-  h2 {
-    border-bottom: 1px solid var(--color-divider);
-  }
-
-  h1,
   h2,
   h3,
   h4 {
@@ -30,13 +22,9 @@ const StyledComponent = styled(Component)`
     line-height: 1.25;
   }
 
-  h1 {
-    padding-bottom: 0.3em;
-    font-size: 2rem;
-  }
-
   h2 {
     padding-bottom: 0.3rem;
+    border-bottom: 1px solid var(--color-divider);
     font-size: 1.5rem;
   }
 
@@ -45,11 +33,7 @@ const StyledComponent = styled(Component)`
   }
 
   li {
-    text-align: left;
-  }
-
-  li + li {
-    margin-top: 0.25em;
+    margin-top: 1rem;
   }
 
   table {
@@ -65,7 +49,7 @@ const StyledComponent = styled(Component)`
 
     td,
     th {
-      padding: 6px 13px;
+      padding: 0.5rem 0.8em;
       border: 1px solid var(--color-divider);
     }
   }

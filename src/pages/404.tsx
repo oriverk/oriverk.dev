@@ -23,7 +23,8 @@ const StyledComponent = styled(Component)`
   font-size: 2rem;
   text-align: center;
 
-  h1, p {
+  h1,
+  p {
     margin: 0 0 1rem;
     padding: 0;
   }

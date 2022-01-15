@@ -51,11 +51,11 @@ const StyledComponent = styled(Component)`
     a {
       padding: 0 1rem;
       text-decoration: none;
-    }
-    a:hover {
-      transition: background 0.25s ease;
-      background: rgba(0, 0, 0, 0.3);
-      border-radius: 0.3rem;
+      &:hover {
+        transition: background 0.25s ease;
+        background: rgba(0, 0, 0, 0.3);
+        border-radius: 0.3rem;
+      }
     }
   }
 `;

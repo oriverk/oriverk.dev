@@ -14,7 +14,7 @@ interface Props {
 const Component: FunctionalComponent<Props> = (props) => (
   <header {...props}>
     <nav>
-      <Link href="/" activeClassName="active" className="left" >
+      <Link href="/" activeClassName="active" className="left">
         oriverk.dev
       </Link>
       <div className="right">

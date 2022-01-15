@@ -6,8 +6,8 @@ interface Props {
 }
 
 const year = new Date().getFullYear();
-const preactjs = "https://preactjs.com/";
-const cloudflarePages = "https://pages.cloudflare.com/";
+const preactjs = "https://preactjs.com";
+const cloudflarePages = "https://pages.cloudflare.com";
 
 const Component: FunctionalComponent<Props> = (props) => (
   <footer {...props}>
@@ -15,11 +15,11 @@ const Component: FunctionalComponent<Props> = (props) => (
       <small>@{year} Kawano Yudai.</small>
       <br />
       <p>
-        This site is built with{" "}
+        This site is built with&nbsp;
         <a href={preactjs} target="_blank" rel="noopener noreferrer">
           Preact
-        </a>{" "}
-        and hosting on{" "}
+        </a>
+        &nbsp; and hosting on&nbsp;
         <a href={cloudflarePages} target="_blank" rel="noopener noreferrer">
           Cloudflare Pages
         </a>
@@ -41,7 +41,7 @@ const StyledComponent = styled(Component)`
       font-size: 1rem;
     }
     p {
-      margin-top: 0.5rem;
+      margin: 0.5rem 0 0;
     }
   }
 `;
