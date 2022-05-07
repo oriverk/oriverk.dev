@@ -9,7 +9,8 @@ interface Props extends PassedProps {
   className?: string;
 }
 
-const Component: FunctionalComponent<Props> = ({ className, html }) => (
+const Component = ({ className, html }: Props) => (
+  // eslint-disable-next-line react/no-danger
   <div className={className} dangerouslySetInnerHTML={{ __html: html }} />
 );
 

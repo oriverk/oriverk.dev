@@ -6,7 +6,7 @@ interface Props extends SvgIconProps {
   className?: string;
 }
 
-const Component: FunctionalComponent<Props> = (props) => {
+const Component = (props: Props) => {
   const { title, label, color: fill, ...restProps } = props;
 
   return (

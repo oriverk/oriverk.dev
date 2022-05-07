@@ -1,4 +1,4 @@
-import { h, FunctionalComponent } from "preact";
+import { h, FunctionalComponent, ComponentChildren } from "preact";
 import { styled } from "goober";
 
 interface PassedProps {
@@ -9,13 +9,14 @@ interface PassedProps {
   fontSize: number;
   width: number;
   height: number;
+  children: ComponentChildren;
 }
 
 interface Props extends PassedProps {
   className?: string;
 }
 
-const Component: FunctionalComponent<Props> = (props) => {
+const Component = (props: Props) => {
   const { className, children, name } = props;
   return (
     <div className={className}>
