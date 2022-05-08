@@ -5,7 +5,7 @@ import { GlobalStyles } from "./styles/global";
 
 setup(h);
 
-const app = document.getElementById("app") as Element;
+const app = document.getElementById("app")!;
 
 render(
   <Fragment>

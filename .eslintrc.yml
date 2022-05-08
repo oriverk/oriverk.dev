@@ -29,6 +29,8 @@ plugins:
   - '@typescript-eslint'
   - import
   - prettier
+ignorePatterns:
+  - vite.config.ts
 rules: {
   'comma-dangle': 0,
   'react/prop-types': 0,
