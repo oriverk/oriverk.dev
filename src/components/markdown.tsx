@@ -1,4 +1,4 @@
-import { h, FunctionalComponent } from "preact";
+import React from "react";
 import { styled } from "goober";
 
 interface PassedProps {
@@ -56,6 +56,6 @@ const StyledComponent = styled(Component)`
   }
 `;
 
-const ContainerComponent: FunctionalComponent<PassedProps> = (props) => <StyledComponent {...props} />;
+const ContainerComponent: React.FC<PassedProps> = (props) => <StyledComponent {...props} />;
 
 export const DangerouslySetInnerHTML = ContainerComponent;

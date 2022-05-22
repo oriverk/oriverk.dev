@@ -1,11 +1,15 @@
-import { h, FunctionalComponent } from "preact";
+import React from "react";
 import { styled } from "goober";
 
-interface Props {
+interface PassedProps {
+  children: React.ReactNode;
+}
+
+interface Props extends PassedProps {
   className?: string;
 }
 
-const Component: FunctionalComponent<Props> = (props) => {
+const Component = (props: Props) => {
   const { className, children } = props;
   return <main className={className}>{children}</main>;
 };
@@ -18,6 +22,6 @@ const StyledComponent = styled(Component)`
   align-items: center;
 `;
 
-const ContainerComponent: FunctionalComponent = (props) => <StyledComponent {...props} />;
+const ContainerComponent: React.FC<PassedProps> = (props) => <StyledComponent {...props} />;
 
 export const Main = ContainerComponent;

@@ -1,4 +1,4 @@
-import { h, FunctionalComponent } from "preact";
+import React from "react";
 import { styled } from "goober";
 
 import { Seo } from "../components/seo";
@@ -9,22 +9,24 @@ interface Props {
   className?: string;
 }
 
-const twitter = "https://twitter.com/not_you_die";
-const github = "https://github.com/oriverk";
+const twitterId = import.meta.env.VITE_TWITTER_USER_ID || "";
+const githubId = import.meta.env.VITE_GITHUB_USER_ID || "";
+const twitter = `https://twitter.com/${twitterId}`;
+const github = `https://github.com/${githubId}`;
 
-const Component: FunctionalComponent<Props> = (props) => (
-  <div {...props}>
-    <Seo path="/" title="Top" description="Kawano Yudai`s website" />
+const Component: React.FC<Props> = ({ className }) => (
+  <div className={className}>
+    <Seo pathname="/" title="Top" description="Kawano Yudai`s website" />
     <h1>Kawano Yudai</h1>
     <p>Agr. → ? / Bicycle</p>
     <div className="icons">
       <a href={twitter} target="_blank" rel="noopener noreferrer">
-        <NamedIcon name="@not_you_die" variant="none" width={16} height={16} fontSize={3}>
+        <NamedIcon name={`@${twitterId}`} variant="none" width={16} height={16} fontSize={3}>
           <TwitterIcon size={8} label="Twitter" />
         </NamedIcon>
       </a>
       <a href={github} target="_blank" rel="noopener noreferrer">
-        <NamedIcon name="oriverk" variant="none" width={16} height={16} fontSize={3}>
+        <NamedIcon name={githubId} variant="none" width={16} height={16} fontSize={3}>
           <GithubIcon size={8} label="Github" />
         </NamedIcon>
       </a>
@@ -60,6 +62,6 @@ const StyledComponent = styled(Component)`
   }
 `;
 
-const ContainerComponent: FunctionalComponent = () => <StyledComponent />;
+const ContainerComponent: React.FC = () => <StyledComponent />;
 
 export const Home = ContainerComponent;

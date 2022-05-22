@@ -5,6 +5,8 @@ interface ImportMetaEnv {
   // その他の環境変数...
   readonly VITE_SITE_PATH: string;
   readonly VITE_BLOG_PATH: string;
+  readonly VITE_GITHUB_USER_ID: string;
+  readonly VITE_TWITTER_USER_ID: string;
   readonly VITE_GITHUB_PATH: string;
 }
 

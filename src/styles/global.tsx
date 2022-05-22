@@ -22,7 +22,7 @@ body {
   padding: 0;
   margin: 0;
   height: 100%;
-  width: 100%;
+  width: calc(100vw - 15px);
   background: var(--color-background);
   font-family: 'Helvetica Neue', arial, sans-serif;
   font-weight: 400;
@@ -40,7 +40,7 @@ a {
   }
 }
 
-#app {
+#root {
   display: flex;
   flex-direction: column;
   height: 100%;

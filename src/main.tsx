@@ -1,16 +1,19 @@
-import { Fragment, h, render } from "preact";
+import React from "react";
+import ReactDOM from "react-dom/client";
 import { setup } from "goober";
+import { HelmetProvider } from "react-helmet-async";
 import { App } from "./app";
 import { GlobalStyles } from "./styles/global";
 
-setup(h);
+setup(React.createElement);
 
-const app = document.getElementById("app")!;
+const root = document.getElementById("root") as Element;
 
-render(
-  <Fragment>
+ReactDOM.createRoot(root).render(
+  <React.StrictMode>
     <GlobalStyles />
-    <App />
-  </Fragment>,
-  app
+    <HelmetProvider>
+      <App />
+    </HelmetProvider>
+  </React.StrictMode>
 );

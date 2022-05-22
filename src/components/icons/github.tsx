@@ -1,4 +1,4 @@
-import { h, FunctionalComponent } from "preact";
+import React from "react";
 import { styled } from "goober";
 import type { SvgIconProps } from "../../types";
 
@@ -23,7 +23,7 @@ const StyledComponent = styled(Component)`
   height: ${({ size }) => `${size / 4}rem`};
 `;
 
-const ContainerComponent: FunctionalComponent<Partial<SvgIconProps>> = (props) => {
+const ContainerComponent: React.FC<Partial<SvgIconProps>> = (props) => {
   const { color = "#FFF", size = 4, role = "presentation", ...rest } = props;
   const modified = {
     color,
