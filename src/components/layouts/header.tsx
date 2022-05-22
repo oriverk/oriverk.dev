@@ -1,5 +1,5 @@
-import { h, FunctionalComponent } from "preact";
-import { Link } from "preact-router/match";
+import React from "react";
+import { NavLink } from "react-router-dom";
 import { styled } from "goober";
 
 import { NamedIcon } from "../named-icon";
@@ -11,18 +11,18 @@ interface Props {
   className?: string;
 }
 
-const Component: FunctionalComponent<Props> = (props) => (
-  <header {...props}>
+const Component: React.FC<Props> = ({ className }) => (
+  <header className={className}>
     <nav>
-      <Link href="/" activeClassName="active" className="left">
+      <NavLink to="/" className={({ isActive }) => (isActive ? "left active" : "left")}>
         oriverk.dev
-      </Link>
+      </NavLink>
       <div className="right">
-        <Link href="/about" activeClassName="active">
+        <NavLink to="about" className={({ isActive }) => (isActive ? "active" : undefined)}>
           <NamedIcon name="About" variant="none" width={16} height={16} fontSize={3}>
             <ContactIcon label="go to resume page" size={8} color="var(--color-gray)" />
           </NamedIcon>
-        </Link>
+        </NavLink>
         <a href={blogPath} target="_blank" rel="noopener noreferrer">
           <NamedIcon name="Blog" variant="none" width={16} height={16} fontSize={3}>
             <PenIcon label="go to blog page" size={8} color="var(--color-gray)" />
@@ -65,6 +65,6 @@ const StyledComponent = styled(Component)`
   }
 `;
 
-const ContainerComponent: FunctionalComponent = () => <StyledComponent />;
+const ContainerComponent: React.FC = () => <StyledComponent />;
 
 export const Header = ContainerComponent;

@@ -1,19 +1,18 @@
-import { h, FunctionComponent, Fragment } from "preact";
+import React from "react";
+import { Outlet } from "react-router-dom";
 
 import { Header } from "./header";
 import { Main } from "./main";
 import { Footer } from "./footer";
 
-const Component: FunctionComponent = (props) => {
-  const { children } = props;
-
-  return (
-    <Fragment>
-      <Header />
-      <Main>{children}</Main>
-      <Footer />
-    </Fragment>
-  );
-};
+const Component: React.FC = () => (
+  <>
+    <Header />
+    <Main>
+      <Outlet />
+    </Main>
+    <Footer />
+  </>
+);
 
 export const Layout = Component;

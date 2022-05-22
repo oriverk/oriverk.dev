@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite'
-import preact from '@preact/preset-vite'
+import react from '@vitejs/plugin-react'
 import { viteStaticCopy } from 'vite-plugin-static-copy'
 
 // https://vitejs.dev/config/
@@ -7,11 +7,10 @@ export default defineConfig({
   resolve: {
     alias: {
       "@/": "src",
-      react: "preact/compat"
     },
   },
   plugins: [
-    preact(),
+    react(),
     viteStaticCopy({
       targets: [
         { src: 'README.md', dest: "." },

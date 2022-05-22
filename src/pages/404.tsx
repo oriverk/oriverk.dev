@@ -1,4 +1,4 @@
-import { h, FunctionalComponent } from "preact";
+import React from "react";
 import { styled } from "goober";
 
 import { Seo } from "../components/seo";
@@ -7,9 +7,9 @@ interface Props {
   className?: string;
 }
 
-const Component: FunctionalComponent<Props> = (props) => (
-  <div {...props}>
-    <Seo path="/" title="404: Page Not Found" description="Kawano Yudai`s website" noindex />
+const Component: React.FC<Props> = ({ className }) => (
+  <div className={className}>
+    <Seo pathname="/404/" title="404: Page Not Found" description="Kawano Yudai`s website" noindex />
     <h1>404</h1>
     <p>Page Not Found ...</p>
     <a href="/">go back to home</a>
@@ -30,6 +30,6 @@ const StyledComponent = styled(Component)`
   }
 `;
 
-const ContainerComponent: FunctionalComponent = () => <StyledComponent />;
+const ContainerComponent: React.FC = () => <StyledComponent />;
 
 export const PageNotFound = ContainerComponent;

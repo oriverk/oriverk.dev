@@ -1,37 +1,32 @@
-import { h, FunctionalComponent } from "preact";
-// @ts-ignore
-import Helmet from "preact-helmet";
+import React from "react";
+import { Helmet } from "react-helmet-async";
 
-interface SeoProps {
-  path: string;
+interface Props {
+  pathname: string;
   title?: string;
   description?: string;
-  ogImagePath?: string;
+  ogImage?: string;
   noindex?: boolean;
 }
 
-export const Seo: FunctionalComponent<SeoProps> = (props) => {
-  const { path, title = "", description, ogImagePath = "/assets/sugarloaf-adelaide.webp", noindex } = props;
+export const Seo: React.FC<Props> = (props) => {
+  const { pathname, title = "", description = "", ogImage = "", noindex = false } = props;
 
-  const sitePath = import.meta.env.VITE_SITE_PATH;
-  const pageUrl = sitePath + path;
-  const ogImageUrl = sitePath + ogImagePath;
+  const origin = import.meta.env.VITE_SITE_PATH;
+  const pageUrl = origin + pathname;
+  const ogImageUrl = origin + ogImage;
   const defaultTitle = "Kawano Yudai";
-
+  const metaTitle = title ? `${title} | ${defaultTitle}` : defaultTitle;
   return (
-    <Helmet
-      title={title}
-      titleTemplate="%s | Kawano Yudai"
-      defaultTitle={defaultTitle}
-      meta={[
-        { name: "og:url", content: pageUrl },
-        { name: "og:title", content: `${title} | Kawano Yudai` },
-        { name: "description", content: description },
-        { name: "og:image", content: ogImageUrl },
-        { name: "og:description", content: description },
-        { name: "robots", content: noindex ? "noindex,nofollow" : "all" },
-      ]}
-      link={[{ rel: "canonical", href: pageUrl }]}
-    />
+    <Helmet>
+      <title>{metaTitle}</title>
+      <meta name="description" content={description || metaTitle} />
+      <meta name="og:url" content={pageUrl} />
+      <meta name="og:title" content={metaTitle} />
+      <meta name="og:description" content={description || metaTitle} />
+      <meta name="og:image" content={ogImageUrl} />
+      <meta name="robots" content={noindex ? "noindex,nofollow" : "all"} />
+      <link rel="canonical" href={pageUrl} />
+    </Helmet>
   );
 };

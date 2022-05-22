@@ -1,19 +1,26 @@
-import { h } from "preact";
-import { Router } from "preact-router";
+import React, { Suspense } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import { Layout } from "./components/layouts";
 import { Home } from "./pages/home";
 import { About } from "./pages/about";
 import { PageNotFound } from "./pages/404";
 
-export function App() {
-  return (
-    <Layout>
-      <Router>
-        <Home path="/" />
-        <About path="/about" />
-        <PageNotFound default />
-      </Router>
-    </Layout>
-  );
-}
+export const App: React.FC = () => (
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route
+          path="about"
+          element={
+            <Suspense fallback="loading">
+              <About />
+            </Suspense>
+          }
+        />
+        <Route path="*" element={<PageNotFound />} />
+      </Route>
+    </Routes>
+  </BrowserRouter>
+);

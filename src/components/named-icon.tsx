@@ -1,4 +1,4 @@
-import { h, FunctionalComponent, ComponentChildren } from "preact";
+import React from "react";
 import { styled } from "goober";
 
 interface PassedProps {
@@ -9,7 +9,7 @@ interface PassedProps {
   fontSize: number;
   width: number;
   height: number;
-  children: ComponentChildren;
+  children: React.ReactNode;
 }
 
 interface Props extends PassedProps {
@@ -44,7 +44,7 @@ const StyledComponent = styled(Component)`
   }
 `;
 
-const ContainerComponent: FunctionalComponent<Partial<PassedProps>> = (props) => {
+const ContainerComponent: React.FC<Partial<PassedProps>> = (props) => {
   const {
     variant = "outline",
     borderRadius = 1,
