@@ -1,22 +1,24 @@
-import React from "react";
+/* eslint-disable arrow-body-style */
+import React, { Suspense } from "react";
 import { styled } from "goober";
 
 import { Seo } from "../components/seo";
-import markdown from "../../Resume.md?raw";
-import { parseMarkdwon } from "../utils/markdown";
-import { DangerouslySetInnerHTML } from "../components/markdown";
+import { LoadingIcon } from "../components/LoadingIcon";
+
+const Resume = React.lazy(() => import('../components/Resume'));
 
 interface Props {
   className?: string;
 }
 
 const Component: React.FC<Props> = ({ className }) => {
-  const { html } = parseMarkdwon(markdown);
 
   return (
     <div className={className}>
       <Seo pathname="/about/" title="About" description="About Kawano Yudai" noindex />
-      <DangerouslySetInnerHTML html={html} />
+      <Suspense fallback={<LoadingIcon />}>
+        <Resume owner="oriverk" repo="Curriculum-Vitae" type='html' />
+      </Suspense>
     </div>
   );
 };

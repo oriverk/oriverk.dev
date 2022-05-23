@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import { Layout } from "./components/layouts";
@@ -11,14 +11,7 @@ export const App: React.FC = () => (
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
-        <Route
-          path="about"
-          element={
-            <Suspense fallback="loading">
-              <About />
-            </Suspense>
-          }
-        />
+        <Route path="about" element={<About />} />
         <Route path="*" element={<PageNotFound />} />
       </Route>
     </Routes>
