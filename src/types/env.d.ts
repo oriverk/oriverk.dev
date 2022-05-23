@@ -8,6 +8,7 @@ interface ImportMetaEnv {
   readonly VITE_GITHUB_USER_ID: string;
   readonly VITE_TWITTER_USER_ID: string;
   readonly VITE_GITHUB_PATH: string;
+  readonly VITE_GITHUB_PERSONAL_ACCESS_TOKEN: string;
 }
 
 interface ImportMeta {
