@@ -11,8 +11,7 @@ const Component: React.FC<Props> = ({ className }) => (
   <div className={className}>
     <Seo pathname="/404/" title="404: Page Not Found" description="Kawano Yudai`s website" noindex />
     <h1>404</h1>
-    <p>Page Not Found ...</p>
-    <a href="/">go back to home</a>
+    <p>Page Not Found</p>
   </div>
 );
 
