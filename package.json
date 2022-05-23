@@ -11,8 +11,8 @@
     "fix:md": "run-s fix:markdownlint fix:textlint",
     "fix:eslint": "eslint --fix 'src/**/{*.ts,*.tsx}'",
     "fix:prettier": "prettier --write 'src/**/{*.ts,*.tsx}'",
-    "fix:markdownlint": "markdownlint -f Resume.md",
-    "fix:textlint": "textlint --fix Resume.md",
+    "fix:markdownlint": "markdownlint -f README.md",
+    "fix:textlint": "textlint --fix README.md",
     "prepare": "husky install"
   },
   "repository": {

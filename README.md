@@ -10,8 +10,10 @@
 
 - [Vite](https://vitejs.dev/)
   - Next Generation Frontend Tooling
-- [Preact](https://preactjs.com/)
-  - Fast 3kB alternative to React with the same modern API
+- ~[Preact](https://preactjs.com/)~
+  - ~Fast 3kB alternative to React with the same modern API~
+- [React](https://reactjs.org)
+  - A JavaScript library for building user interfaces
 - [TypeScript](https://www.typescriptlang.org/)
   - TypeScript is JavaScript with syntax for types.
 - [goober](https://goober.rocks/)
@@ -35,10 +37,15 @@ reference: [vitejs: Env Variables and Modes](https://vitejs.dev/guide/env-and-mo
 
 | Name | Description | Reference |
 | --- | --- | --- |
-| VITE_SITE_PATH | for portfolio site | [github: oriverk/oriverk.dev](https://github.com/oriverk/oriverk.dev) |
-| VITE_BLOG_PATH | for portfolio blog | [github: oriverk/blog.oriverk.dev](https://github.com/oriverk/blog.oriverk.dev) |
+| VITE_SITE_PATH | for portfolio site | [GitHub: oriverk/oriverk.dev](https://github.com/oriverk/oriverk.dev) |
+| VITE_BLOG_PATH | for portfolio blog | [GitHub: oriverk/blog.oriverk.dev](https://github.com/oriverk/blog.oriverk.dev) |
+| VITE_GITHUB_USER_ID | GitHub Account | [GitHub: oriverk](https://github.com/oriverk) |
+| VITE_TWITTER_USER_ID | Twitter Account | [Twitter: not_you_die](https://twitter.com/not_you_die) |
+| VITE_GITHUB_PERSONAL_ACCESS_TOKEN | /\w+/ | [GitHub: 個人アクセストークンを使用する](https://docs.github.com/ja/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) |
 
-## Errors I met with
+## Errors
+
+### `csstype`
 
 ```txt
 node_modules/goober/global/global.d.ts(1,45): error TS2307: Cannot find module 'csstype' or its corresponding type declarations.
@@ -46,3 +53,53 @@ node_modules/goober/goober.d.ts(1,45): error TS2307: Cannot find module 'csstype
 ```
 
 devDependency に `csstype` を追加して回避した。あとで詳しく調べる。
+
+## メモ書き
+
+### micromark for markdown parser
+
+about ページ用に内部で保持、処理していた markdown parser が要らなくなったので下を削除した。後で micromark を使う時用にメモ書き
+
+```tsx:markdown.tsx
+import { micromark } from "micromark";
+import { frontmatter } from "micromark-extension-frontmatter";
+import { gfm, gfmHtml } from "micromark-extension-gfm";
+
+export function parseMarkdwon(markdown: string) {
+  const html = micromark(markdown, {
+    allowDangerousHtml: true,
+    extensions: [frontmatter(), gfm()],
+    htmlExtensions: [gfmHtml()],
+  });
+  return { html };
+}
+```
+
+```ts:vite.config.ts
+import { defineConfig } from 'vite'
+
+export default defineConfig({
+  assetsInclude: [/\.mdx?$/]
+})
+```
+
+### vite-plugin-static-copy
+
+静的ファイルをコピーするプラグイン。不必要になったので削除
+
+```ts:vite.config.ts
+import { defineConfig } from 'vite'
+import { viteStaticCopy } from 'vite-plugin-static-copy'
+
+export default defineConfig({
+  plugins: [
+    viteStaticCopy({
+      targets: [
+        { src: 'README.md', dest: "." },
+        { src: 'Resume.md', dest: "." }
+      ]
+    })
+  ]
+})
+
+```
