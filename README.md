@@ -41,7 +41,7 @@ reference: [vitejs: Env Variables and Modes](https://vitejs.dev/guide/env-and-mo
 | VITE_BLOG_PATH | for portfolio blog | [GitHub: oriverk/blog.oriverk.dev](https://github.com/oriverk/blog.oriverk.dev) |
 | VITE_GITHUB_USER_ID | GitHub Account | [GitHub: oriverk](https://github.com/oriverk) |
 | VITE_TWITTER_USER_ID | Twitter Account | [Twitter: not_you_die](https://twitter.com/not_you_die) |
-| VITE_GITHUB_PERSONAL_ACCESS_TOKEN | /\w+/ | [GitHub: 個人アクセストークンを使用する](https://docs.github.com/ja/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) |
+| VITE_GITHUB_PERSONAL_ACCESS_TOKEN | /ghp_\w+/ | [GitHub: 個人アクセストークンを使用する](https://docs.github.com/ja/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) |
 
 ## Errors
 
