@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { styled } from "goober";
 
-import { NamedIcon } from "../named-icon";
+import { NamedIcon } from "../NamedIcon";
 import { ContactIcon, PenIcon } from "../icons";
 
 const blogPath = import.meta.env.VITE_BLOG_PATH;

@@ -2,7 +2,7 @@ import React from "react"
 import useSWR from "swr"
 
 import { readmeFetcher } from "../utils/fetcher";
-import { DangerouslySetInnerHTML } from "../components/markdown";
+import { DangerouslySetInnerHTML } from "./DangerouslySetInnerHTML";
 
 type Props = {
   owner: string;

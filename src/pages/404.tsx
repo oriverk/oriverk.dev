@@ -1,7 +1,7 @@
 import React from "react";
 import { styled } from "goober";
 
-import { Seo } from "../components/seo";
+import { Seo } from "../components/Seo";
 
 interface Props {
   className?: string;

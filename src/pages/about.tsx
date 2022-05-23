@@ -2,7 +2,7 @@
 import React, { Suspense } from "react";
 import { styled } from "goober";
 
-import { Seo } from "../components/seo";
+import { Seo } from "../components/Seo";
 import { LoadingIcon } from "../components/LoadingIcon";
 
 const Resume = React.lazy(() => import('../components/Resume'));

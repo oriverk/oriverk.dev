@@ -1,9 +1,9 @@
 import React from "react";
 import { styled } from "goober";
 
-import { Seo } from "../components/seo";
+import { Seo } from "../components/Seo";
 import { GithubIcon, TwitterIcon } from "../components/icons";
-import { NamedIcon } from "../components/named-icon";
+import { NamedIcon } from "../components/NamedIcon";
 
 interface Props {
   className?: string;
