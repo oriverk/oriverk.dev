@@ -20,12 +20,12 @@ const Component: React.FC<Props> = ({ className }) => (
       <div className="right">
         <NavLink to="about" className={({ isActive }) => (isActive ? "active" : undefined)}>
           <NamedIcon name="About" variant="none" width={16} height={16} fontSize={3}>
-            <ContactIcon label="go to resume page" size={8} color="var(--color-gray)" />
+            <ContactIcon label="go to resume page" size={2} color="var(--color-gray)" />
           </NamedIcon>
         </NavLink>
         <a href={blogPath} target="_blank" rel="noopener noreferrer">
           <NamedIcon name="Blog" variant="none" width={16} height={16} fontSize={3}>
-            <PenIcon label="go to blog page" size={8} color="var(--color-gray)" />
+            <PenIcon label="go to blog page" size={2} color="var(--color-gray)" />
           </NamedIcon>
         </a>
       </div>

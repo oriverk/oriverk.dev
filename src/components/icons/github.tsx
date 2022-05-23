@@ -19,12 +19,12 @@ const Component = (props: Props) => {
 
 const StyledComponent = styled(Component)`
   fill: ${({ color }) => color};
-  width: ${({ size }) => `${size / 4}rem`};
-  height: ${({ size }) => `${size / 4}rem`};
+  width: ${({ size }) => `${size}rem`};
+  height: ${({ size }) => `${size}rem`};
 `;
 
 const ContainerComponent: React.FC<Partial<SvgIconProps>> = (props) => {
-  const { color = "#FFF", size = 4, role = "presentation", ...rest } = props;
+  const { color = "#FFF", size = 1, role = "presentation", ...rest } = props;
   const modified = {
     color,
     size,

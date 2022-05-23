@@ -22,12 +22,12 @@ const Component: React.FC<Props> = ({ className }) => (
     <div className="icons">
       <a href={twitter} target="_blank" rel="noopener noreferrer">
         <NamedIcon name={`@${twitterId}`} variant="none" width={16} height={16} fontSize={3}>
-          <TwitterIcon size={8} label="Twitter" />
+          <TwitterIcon size={2} label="Twitter" />
         </NamedIcon>
       </a>
       <a href={github} target="_blank" rel="noopener noreferrer">
         <NamedIcon name={githubId} variant="none" width={16} height={16} fontSize={3}>
-          <GithubIcon size={8} label="Github" />
+          <GithubIcon size={2} label="Github" />
         </NamedIcon>
       </a>
     </div>

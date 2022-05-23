@@ -19,7 +19,7 @@ const Component: React.FC<Props> = ({ className }) => (
         <a href={reactjs} target="_blank" rel="noopener noreferrer">
           React
         </a>
-        &nbsp; and hosting on&nbsp;
+        &nbsp;and hosting on&nbsp;
         <a href={cloudflarePages} target="_blank" rel="noopener noreferrer">
           Cloudflare Pages
         </a>
