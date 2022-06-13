@@ -1,0 +1,36 @@
+scalar Date
+scalar DateTime
+
+# weedFrom: Only contributions made at this time or later will be counted. If omitted, defaults to a year ago
+query getGithub($githubId: String!, $weedFrom: DateTime, $weedTo: DateTime!) {
+  user(login: $githubId) {
+    pinnedItems(first: 6, types: REPOSITORY) {
+      nodes {
+        ... on Repository {
+          url
+          name
+          description
+          primaryLanguage {
+            color
+            name
+          }
+          stargazerCount
+        }
+      }
+    }
+    contributionsCollection(from: $weedFrom, to: $weedTo) {
+      contributionCalendar{
+        colors
+        totalContributions
+      	weeks {
+          contributionDays {
+            contributionCount
+            contributionLevel
+            date
+            color
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,120 @@
+scalar Date
+scalar DateTime
+
+# Represents a given language found in repositories.
+type PrimaryLanguage {
+  # The color defined for the current language.
+  color: String!
+  # The name of the current language.
+  name: String!
+}
+
+type Repository {
+  url: String!
+  name: String!
+  description: String!
+  primaryLanguage: PrimaryLanguage
+  # Returns a count of how many stargazers there are on this object
+  stargazerCount: Int!
+}
+
+# Types that can be pinned to a profile page.
+# union PinnableItem = Gist | Repository
+union PinnableItem = Repository
+
+# The connection type for PinnableItem.
+type PinnableItemConnection {
+  # A list of nodes.
+  nodes: [PinnableItem]
+}
+
+enum ContributionLevel {
+  # Lowest 25% of days of contributions.
+  FIRST_QUARTILE
+  # Highest 25% of days of contributions. More contributions than the third quartile.
+  FOURTH_QUARTILE
+  # No contributions occurred.
+  NONE
+  # Second lowest 25% of days of contributions. More contributions than the first quartile.
+  SECOND_QUARTILE
+  # Second highest 25% of days of contributions. More contributions than second quartile, less than the fourth quartile.
+  THIRD_QUARTILE
+}
+
+# Represents a single day of contributions on GitHub by a user.
+type ContributionCalendarDay {
+  # The hex color code that represents how many contributions were made on this day compared to others in the calendar.
+  color: String!
+  # How many contributions were made by the user on this day.
+  contributionCount: Int!
+  # Indication of contributions, relative to other days. Can be used to indicate 
+  # which color to represent this day on a calendar.
+  contributionLevel: ContributionLevel!
+  # The day this square represents.
+  date: Date!
+}
+
+type ContributionCalendarWeek {
+  contributionDays: [ContributionCalendarDay!]!
+}
+
+
+# A month of contributions in a user's contribution graph.
+type ContributionCalendar {
+  # A list of hex color codes used in this calendar. The darker the color, the more contributions it represents.
+  colors: [String!]!
+  # The count of total contributions in the calendar.
+  totalContributions: Int!
+  # A list of the weeks of contributions in this calendar.
+  weeks: [ContributionCalendarWeek!]!
+}
+
+# A contributions collection aggregates contributions such as opened issues and commits created by a user.
+type ContributionsCollection {
+  # A calendar of this user's contributions on GitHub.
+  contributionCalendar: ContributionCalendar!
+}
+
+# Represents items that can be pinned to a profile page or dashboard.
+enum PinnableItemType {
+  # A gist.
+  GIST
+  # An issue.
+  ISSUE
+  # An organization.
+  ORGANIZATION
+  # A project.
+  PROJECT
+  # A pull request.
+  PULL_REQUEST
+  # A repository.
+  REPOSITORY
+  # A team.
+  TEAM
+  # A user.
+  USER
+}
+
+type User {
+  pinnedItems(
+    # Returns the first _n_ elements from the list.
+    first: Int
+    # Filter the types of pinned items that are returned.
+    types: [PinnableItemType!]
+  ): PinnableItemConnection!
+  contributionsCollection(
+    # Only contributions made at this time or later will be counted. If omitted, defaults to a year ago.
+    from: DateTime
+    # Only contributions made before and up to (including) this time will be
+    # counted. If omitted, defaults to the current time or one year from the
+    # provided from argument.
+    to: DateTime
+  ): ContributionsCollection!
+}
+
+type Query {
+  user(
+    # The username of the actor.
+    login: String!
+  ): User!
+}
