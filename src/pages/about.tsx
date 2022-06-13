@@ -1,32 +1,23 @@
-/* eslint-disable arrow-body-style */
 import React, { Suspense } from "react";
 import { styled } from "goober";
 
+import { Container } from "../components/Container"
 import { Seo } from "../components/Seo";
 import { LoadingIcon } from "../components/LoadingIcon";
 
+const Box = styled(Container)`
+  width: 100%;
+  background: var(--color-background);
+  color: white;
+`
+
 const Resume = React.lazy(() => import('../components/Resume'));
 
-interface Props {
-  className?: string;
-}
-
-const Component: React.FC<Props> = ({ className }) => {
-
-  return (
-    <div className={className}>
+export const About: React.FC = () => (
+    <Box className="About">
       <Seo pathname="/about/" title="About" description="About Kawano Yudai" noindex />
       <Suspense fallback={<LoadingIcon />}>
         <Resume owner="oriverk" repo="Curriculum-Vitae" type='html' />
       </Suspense>
-    </div>
+    </Box>
   );
-};
-
-const StyledComponent = styled(Component)`
-  max-width: var(--max-width);
-`;
-
-const ContainerComponent: React.FC = () => <StyledComponent />;
-
-export const About = ContainerComponent;

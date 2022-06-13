@@ -32,6 +32,7 @@ const Component: React.FC<Props> = ({ className }) => (
 const StyledComponent = styled(Component)`
   padding: 1rem;
   text-align: center;
+  background: var(--color-background);
   & > div {
     margin: 0 auto;
     max-width: var(--max-width);

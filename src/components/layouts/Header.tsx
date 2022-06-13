@@ -35,6 +35,7 @@ const Component: React.FC<Props> = ({ className }) => (
 
 const StyledComponent = styled(Component)`
   font-size: 1.5rem;
+  background: var(--color-background);
   & > nav {
     margin: 0 auto;
     padding: 1rem;
@@ -42,7 +43,8 @@ const StyledComponent = styled(Component)`
     justify-content: space-between;
     align-items: center;
     max-width: var(--max-width);
-    & > .left {
+
+    .left {
       color: var(--color-white);
       text-decoration: none;
       &.active {
@@ -53,7 +55,8 @@ const StyledComponent = styled(Component)`
         transition: color 0.3s ease;
       }
     }
-    & > .right {
+
+    .right {
       display: flex;
       & > a:hover {
         text-decoration: none;

@@ -13,7 +13,7 @@ type Props = {
 const Component: React.FC<Props> = (props) => {
   const { owner, repo, type } = props;
   const url = `https://api.github.com/repos/${owner}/${repo}/readme`
-  const { data = ''} = useSWR(url, () => readmeFetcher(url, type))
+  const { data = ''} = useSWR([url, type], readmeFetcher)
 
   return <DangerouslySetInnerHTML html={data} />
 }

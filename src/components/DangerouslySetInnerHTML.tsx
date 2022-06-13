@@ -15,6 +15,8 @@ const Component = ({ className, html }: Props) => (
 );
 
 const StyledComponent = styled(Component)`
+  max-width: var(--max-width);
+  
   h2,
   h3,
   h4 {
