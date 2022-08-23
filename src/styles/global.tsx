@@ -15,13 +15,14 @@ export const GlobalStyles = createGlobalStyles`
 
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  border: 0;
 }
 
 html {
   font-family: 'Helvetica Neue', arial, sans-serif;
+}
+
+body {
+  margin: 0;
 }
 
 a {

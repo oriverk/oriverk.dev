@@ -43,6 +43,7 @@ const StyledComponent = styled(Component)`
   flex-grow: 1;
   font-size: 2rem;
   color: white;
+  height: calc(100vh - 6rem);
   width: 100%;
   background: var(--color-background);
 

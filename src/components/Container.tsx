@@ -7,6 +7,7 @@ interface Props {
 }
 
 const StyledSection = styled('section')`
+  border: 1px solid yellow;
   display: flex;
   justify-content: center;
   align-items: center;
