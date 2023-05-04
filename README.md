@@ -1,10 +1,10 @@
 # oriverk.dev: README
 
-## Author
+This repo has been archived at 2023-05-04.
 
-- [Github](https://github.com/oriverk)
-- [Twitter](https://twitter.com/not_you_die)
-- [Qiita](https://qiita.com/OriverK)
+And site `oriverk.dev` is built with [oriverk/astro-site: astro-svelte site on Cloudflare Pages with continuous deploy by GitHub Actions](https://github.com/oriverk/astro-site)
+
+![image](https://user-images.githubusercontent.com/44029144/236158624-7903caf7-7974-46ee-9a23-f7b256efbbc3.png)
 
 ## Techs
 
