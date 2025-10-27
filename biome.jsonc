@@ -21,6 +21,15 @@
       "recommended": true,
       "suspicious": {
         "noExplicitAny": "warn"
+      },
+      "nursery": {
+        // experimental: [useSortedClasses | Biome](https://biomejs.dev/linter/rules/use-sorted-classes/)
+        "useSortedClasses": {
+          "level": "error",
+          "options": {
+            "functions": ["clsx", "tw"]
+          }
+        }
       }
     }
   },
@@ -38,7 +47,11 @@
       "linter": {
         "rules": {
           "suspicious": {
-            "noDuplicateProperties": "info"
+            "noDuplicateProperties": "info",
+            "noUnknownAtRules": "info"
+          },
+          "correctness": {
+            "noUnknownProperty": "info"
           }
         }
       }
