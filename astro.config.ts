@@ -1,5 +1,6 @@
 import mdx from "@astrojs/mdx";
 import svelte from "@astrojs/svelte";
+import tailwindcss from "@tailwindcss/vite";
 import { pluginLineNumbers } from "@expressive-code/plugin-line-numbers";
 import expressiveCode from "astro-expressive-code";
 import { defineConfig } from "astro/config";
@@ -33,6 +34,9 @@ export default defineConfig({
       // rehypeKatex
     ],
     gfm: true,
+  },
+  vite: {
+    plugins: [tailwindcss()],
   },
   integrations: [
     svelte(),

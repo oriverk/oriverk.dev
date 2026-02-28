@@ -1,64 +1,94 @@
 {
-	"$schema": "https://biomejs.dev/schemas/1.6.1/schema.json",
-	"organizeImports": {
-		"enabled": true
-	},
-	"vcs": {
-		"enabled": true,
-		"clientKind": "git",
-		"useIgnoreFile": true
-	},
-	"javascript": {
-		"globals": [
-			"Astro"
-		]
-	},
-	"files": {
-		"ignore": [
-			".vscode",
-			".contents/*.json"
-		]
-	},
-	"formatter": {
-		"indentStyle": "space"
-	},
-	"linter": {
-		"enabled": true,
-		"rules": {
-			"recommended": true,
-			"suspicious": {
-				"noExplicitAny": "warn"
-			}
-		}
-	},
-	"overrides": [
-		{
-			"include": [
-				"*.jsonc"
-			],
-			"json": {
-				"parser": {
-					"allowComments": true
-				}
-			}
-		},
-		{
-			"include": [
-				"*.svelte"
-			],
-			"linter": {
-				"rules": {
-					"correctness": {
-						"noUnusedLabels": "off"
-					},
-					"suspicious": {
-						"noConfusingLabels": "off"
-					},
-					"style": {
-						"useConst": "off"
-					}
-				}
-			}
-		}
-	]
+  "$schema": "https://biomejs.dev/schemas/2.4.4/schema.json",
+  "assist": { "actions": { "source": { "organizeImports": "on" } } },
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "useIgnoreFile": true
+  },
+  "javascript": {
+    "globals": ["Astro"]
+  },
+  "files": {
+    "includes": ["**", "!**/.vscode", "!**/.contents/**/*.json"]
+  },
+  "formatter": {
+    "indentStyle": "space"
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+      "suspicious": {
+        "noExplicitAny": "warn"
+      },
+      "nursery": {
+        // experimental: [useSortedClasses | Biome](https://biomejs.dev/linter/rules/use-sorted-classes/)
+        "useSortedClasses": {
+          "level": "error",
+          "options": {
+            "functions": ["clsx", "tw"]
+          }
+        }
+      }
+    }
+  },
+  "html": {
+    "experimentalFullSupportEnabled": true,
+  },
+  "overrides": [
+    {
+      "includes": ["**/*.jsonc"],
+      "json": {
+        "parser": {
+          "allowComments": true
+        }
+      }
+    },
+    {
+      "includes": ["**/*.css"],
+      "linter": {
+        "rules": {
+          "suspicious": {
+            "noDuplicateProperties": "info",
+            "noUnknownAtRules": "info"
+          },
+          "correctness": {
+            "noUnknownProperty": "info"
+          }
+        }
+      }
+    },
+    {
+      "includes": ["**/*.astro"],
+      "linter": {
+        "rules": {
+          "style": {
+            "useConst": "off",
+            "useImportType": "off"
+          },
+          "correctness": {
+            "noUnusedVariables": "off",
+            "noUnusedImports": "off"
+          }
+        }
+      }
+    },
+    {
+      "includes": ["**/*.svelte"],
+      "linter": {
+        "rules": {
+          "correctness": {
+            "noUnusedLabels": "off"
+          },
+          "suspicious": {
+            "noConfusingLabels": "off"
+          },
+          "style": {
+            "useConst": "off"
+          }
+        }
+      }
+    }
+  ]
 }
